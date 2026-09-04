@@ -1,0 +1,13 @@
+{
+  "name": "bugs-haunter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Un arcade pixel-art sobre Agustín, el desarrollador que caza bugs dentro del PC.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

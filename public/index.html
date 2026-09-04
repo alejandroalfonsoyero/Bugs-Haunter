@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090c14" />
+  <title>Bugs Haunter — Caza el caos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" id="homeLogo" aria-label="Volver a la pantalla inicial">
+        <span class="brand-bug" aria-hidden="true">◆</span>
+        <span>BUGS <b>HAUNTER</b></span>
+      </a>
+      <div class="status"><i></i> SISTEMA EN LÍNEA</div>
+      <div class="top-actions">
+        <button class="home-btn" id="homeBtn" aria-label="Volver a la pantalla inicial">⌂ INICIO</button>
+        <button class="sound" id="soundBtn" aria-label="Activar o desactivar sonido">SONIDO: ON</button>
+      </div>
+    </header>
+
+    <section class="game-frame">
+      <div class="scanlines"></div>
+      <div class="hud">
+        <div class="hud-cell"><span>PUNTOS</span><strong id="score">000000</strong></div>
+        <div class="hud-cell"><span>COMBO</span><strong id="combo">x1</strong></div>
+        <div class="hud-cell identity"><img src="assets/agustin.png" alt="Agustín" /><div><span>DESARROLLADOR</span><strong>AGUSTÍN</strong></div></div>
+        <div class="hud-cell threat"><span>INTEGRIDAD DE AGUSTÍN</span><div class="health-track"><i id="healthBar"></i></div><strong id="healthText">100%</strong></div>
+        <div class="hud-cell right"><span>NIVEL</span><strong id="level">01</strong></div>
+      </div>
+      <canvas id="game" width="1280" height="720" aria-label="Juego Bugs Haunter"></canvas>
+
+      <section class="overlay active" id="startScreen">
+        <div class="hero-card">
+          <div class="portrait-wrap"><img src="assets/agustin.png" alt="Retrato pixel art de Agustín" /><span>AGUSTÍN.EXE</span></div>
+          <div class="hero-copy">
+            <p class="eyebrow">// INCIDENTE #404</p>
+            <h1>EL CÓDIGO<br /><em>ESTÁ INFECTADO</em></h1>
+            <p>Los bugs han tomado el sistema. Entra al PC, limpia los procesos corruptos y evita que el servidor colapse.</p>
+            <button class="primary" id="startBtn"><span>INICIAR CACERÍA</span><b>↵</b></button>
+            <div class="controls"><span><kbd>WASD</kbd> MOVER</span><span><kbd>CLICK</kbd> DISPARAR</span><span><kbd>SHIFT</kbd> DASH</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overlay" id="endScreen">
+        <div class="result-card">
+          <p class="eyebrow">// PROCESO TERMINADO</p>
+          <h2 id="resultTitle">SISTEMA CAÍDO</h2>
+          <p id="resultText">Los bugs ganaron esta compilación.</p>
+          <div class="result-score"><span>PUNTUACIÓN FINAL</span><strong id="finalScore">0</strong></div>
+          <button class="primary" id="restartBtn"><span>RECOMPILAR</span><b>↻</b></button>
+          <button class="secondary" id="endHomeBtn">⌂ VOLVER AL INICIO</button>
+        </div>
+      </section>
+      <div class="toast" id="toast">¡BUG ELIMINADO!</div>
+    </section>
+
+    <footer>
+      <p><span class="green">■</span> MISIÓN: ELIMINA BUGS Y SOBREVIVE 90 SEGUNDOS</p>
+      <p>BUILD 1.0.4&nbsp; // &nbsp;SORBA LABS</p>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
